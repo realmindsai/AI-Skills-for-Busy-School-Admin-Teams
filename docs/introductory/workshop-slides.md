@@ -45,11 +45,11 @@ h3 { font-size: 26px; color: var(--rmai-slate); font-weight: 600; margin-top: 16
 ul, ol { padding-left: 28px; }
 li { margin-bottom: 8px; }
 
-strong { color: var(--rmai-black); font-weight: 700; }
+strong { color: var(--rmai-purple-dark); font-weight: 700; }
 em { color: var(--rmai-slate); }
 
 table { border-collapse: collapse; width: 100%; font-size: 18px; margin: 12px 0; }
-th { background-color: var(--rmai-purple); color: white; font-weight: 600; padding: 10px 12px; text-align: left; }
+th { background-color: var(--rmai-purple-dark); color: white; font-weight: 600; padding: 10px 12px; text-align: left; }
 td { border: 1px solid var(--rmai-border); padding: 8px 12px; }
 tr:nth-child(even) { background-color: white; }
 
@@ -59,6 +59,7 @@ footer { font-size: 14px; color: var(--rmai-slate); opacity: 0.7; }
 
 blockquote { border-left: 4px solid var(--rmai-purple); background: var(--rmai-oat); padding: 12px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; font-style: italic; }
 
+/* Lead slides — purple gradient: all text white */
 section.lead {
   background: linear-gradient(135deg, #A77ACD 0%, #7B5BA0 60%, #5D3F7E 100%);
   color: white;
@@ -70,27 +71,40 @@ section.lead {
 }
 section.lead h1 { color: white; font-size: 52px; }
 section.lead h2 { color: rgba(255,255,255,0.9); border-bottom: 3px solid rgba(255,255,255,0.4); }
+section.lead h3 { color: rgba(255,255,255,0.85); }
 section.lead p { color: rgba(255,255,255,0.9); font-size: 24px; }
+section.lead strong { color: white; }
+section.lead em { color: rgba(255,255,255,0.85); }
+section.lead li { color: rgba(255,255,255,0.95); }
+section.lead blockquote { background: rgba(255,255,255,0.12); border-left-color: rgba(255,255,255,0.4); color: rgba(255,255,255,0.9); }
 section.lead footer { color: rgba(255,255,255,0.5); }
 
+/* Theory slides — oat bg: orange accent */
 section.theory {
   background: var(--rmai-oat);
   border-top: 6px solid var(--rmai-orange);
 }
 section.theory h2 { color: var(--rmai-orange-dark); border-bottom-color: var(--rmai-orange); }
+section.theory strong { color: var(--rmai-orange-dark); }
+section.theory blockquote { background: rgba(255,255,255,0.5); }
 
+/* Exercise slides — white bg: blue accent */
 section.exercise {
   background: white;
   border-top: 6px solid var(--rmai-blue);
 }
 section.exercise h2 { color: var(--rmai-blue-dark); border-bottom-color: var(--rmai-blue); }
+section.exercise strong { color: var(--rmai-blue-dark); }
 
+/* Debrief slides — light purple bg: green accent */
 section.debrief {
   background: linear-gradient(180deg, var(--rmai-offwhite) 0%, #EDE4F3 100%);
   border-top: 6px solid var(--rmai-green);
 }
 section.debrief h2 { color: var(--rmai-green-dark); border-bottom-color: var(--rmai-green); }
+section.debrief strong { color: var(--rmai-green-dark); }
 
+/* Break slides — oat gradient */
 section.break-slide {
   background: linear-gradient(135deg, var(--rmai-oat) 0%, #E8D5C4 100%);
   border-top: none;
