@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Prompt Pack | Real Minds AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --purple: #A77ACD;
+      --purple-dark: #7B5BA0;
+      --orange: #F26541;
+      --black: #1A1B25;
+      --slate: #373841;
+      --offwhite: #FAF9F7;
+      --oat: #F1E8D7;
+      --blue: #5791C7;
+      --green: #349990;
+      --border: #E7E7EA;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Epilogue', 'Inter', 'SF Pro', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: var(--offwhite);
+      color: var(--black);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #A77ACD 0%, #7B5BA0 60%, #5D3F7E 100%);
+      padding: 36px 0 32px;
+      text-align: center;
+      color: white;
+    }
+
+    header img { height: 48px; margin-bottom: 12px; }
+    header h1 { font-size: 26px; font-weight: 700; line-height: 1.2; margin-bottom: 4px; }
+    header p { font-size: 16px; opacity: 0.85; font-weight: 400; }
+    header .back-link { display: inline-block; margin-top: 12px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; }
+    header .back-link:hover { color: white; }
+
+    .content { padding: 32px 0 48px; }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--purple);
+      margin: 36px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 3px solid var(--purple);
+    }
+
+    h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--slate);
+      margin: 20px 0 8px;
+    }
+
+    p { margin: 8px 0; font-size: 15px; }
+
+    ul, ol { padding-left: 24px; margin: 8px 0; }
+    li { margin-bottom: 4px; font-size: 15px; }
+
+    strong { color: var(--black); font-weight: 600; }
+
+    .note {
+      background: var(--oat);
+      border-left: 4px solid var(--orange);
+      padding: 12px 16px;
+      border-radius: 0 6px 6px 0;
+      margin: 12px 0;
+      font-size: 14px;
+    }
+
+    .use-with {
+      font-size: 13px;
+      color: var(--slate);
+      font-weight: 500;
+      margin: 4px 0 8px;
+    }
+
+    blockquote {
+      border-left: 4px solid var(--purple);
+      background: white;
+      padding: 12px 16px;
+      margin: 12px 0;
+      border-radius: 0 6px 6px 0;
+      font-style: italic;
+      color: var(--slate);
+      font-size: 14px;
+    }
+    blockquote p { margin: 4px 0; font-size: 14px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 14px;
+    }
+    th {
+      background: var(--purple-dark);
+      color: white;
+      font-weight: 600;
+      padding: 8px 10px;
+      text-align: left;
+    }
+    td {
+      border: 1px solid var(--border);
+      padding: 6px 10px;
+    }
+    tr:nth-child(even) { background: white; }
+    tr:nth-child(odd) { background: var(--offwhite); }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 28px 0;
+    }
+
+    /* Copy block */
+    .copy-block {
+      position: relative;
+      margin: 12px 0;
+    }
+
+    .copy-block pre {
+      background: #1A1B25;
+      color: #E8E8EC;
+      padding: 16px 20px;
+      padding-right: 80px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+      font-size: 13px;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: var(--purple);
+      color: white;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      z-index: 2;
+    }
+
+    .copy-btn:hover { background: var(--purple-dark); }
+
+    .copy-btn.copied {
+      background: var(--green);
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 0 40px;
+      border-top: 1px solid var(--border);
+      color: var(--slate);
+      font-size: 14px;
+    }
+    footer img { height: 32px; margin-bottom: 6px; }
+    footer .tagline { font-style: italic; color: var(--purple); margin: 4px 0 8px; }
+    footer a { color: var(--purple); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 20px; }
+      header { padding: 24px 0 20px; }
+      .copy-block pre { padding-right: 20px; padding-top: 44px; }
+      .copy-btn { top: 6px; right: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <img src="../assets/rmai_logo.png" alt="Real Minds AI">
+      <h1>Advanced Prompt Pack</h1>
+      <p>Prompts for verification and governance exercises</p>
+      <a href="../" class="back-link">&larr; Back to workshop materials</a>
+    </div>
+  </header>
+
+  <div class="container content">
+<p><strong>Workshop:</strong> 5 March 2026 | <strong>Real Minds AI</strong></p>
+<p>These prompts work with the <strong>Messy Mini-Pack</strong> — intentionally broken data containing duplicates, contradictions, missing fields, and privacy traps. Start every session by pasting your <strong>Context Card</strong> first.</p>
+<hr>
+<h2>Your Context Card</h2>
+<p>Paste this at the start of every AI conversation:</p>
+<div class="copy-block">
+  <button class="copy-btn">Copy</button>
+  <pre>[YOUR CONTEXT CARD GOES HERE — you built this in Exercise 1]</pre>
+</div>
+<hr>
+<h2>Exercise A1: Incident Pack Assembly</h2>
+<p>Paste your context card, then <strong>all five of these documents</strong> from your Messy Mini-Pack:</p>
+<ul>
+  <li>Artifact 02: Yard Duty Staff Account</li>
+  <li>Artifact 03: Student Services Intake Note</li>
+  <li>Artifact 04: First Aid Log Excerpt</li>
+  <li>Artifact 05: Parent Contact Log</li>
+  <li>Artifact 06: CCTV Maintenance Ticket</li>
+</ul>
+<p>Then add this prompt:</p>
+<div class="copy-block">
+  <button class="copy-btn">Copy</button>
+  <pre>Using these five documents about the same incident, please:
+
+1. Create a Known / Unconfirmed / Unknown fact list (bullet points).
+   - &quot;Known&quot; = confirmed by 2+ sources or physical evidence
+   - &quot;Unconfirmed&quot; = mentioned by one source, not contradicted
+   - &quot;Unknown&quot; = key fact that no source provides
+
+2. Produce a SafeTrack incident entry in structured fields:
+   Date, TimeRange, Location, Category, PeopleInvolved (StudentIDs only),
+   ImmediateActions, Injuries, ParentContactAttempts, Evidence,
+   FollowUpOwner, ReviewDate
+
+3. List exactly what must be verified by a human before finalising.
+
+Constraints: do not invent facts. Clearly mark all conflicts between
+sources. Where two sources disagree, show both versions.</pre>
+</div>
+<p><strong>Bonus prompt (cross-reference):</strong></p>
+<div class="copy-block">
+  <button class="copy-btn">Copy</button>
+  <pre>Now compare this incident record against the requirements in the
+Authority Bulletin (below). Flag any missing fields or areas where
+the record does not meet the minimum expectations.
+
+[Paste Artifact 10 — Authority Bulletin here]</pre>
+</div>
+<hr>
+<h2>Exercise A2: Fix the Problematic Email</h2>
+<p>Paste your context card, then the <strong>Problematic Draft Email</strong> (Artifact 07), then add:</p>
+<div class="copy-block">
+  <button class="copy-btn">Copy</button>
+  <pre>This draft email is problematic and must not be sent as-is.
+Rewrite it so that it:
+- does not mention or identify any other student
+- does not promise specific outcomes (no &quot;never again&quot;, no suspension
+  details)
+- does not claim evidence that has not been verified
+- includes clear next steps with a timeframe and a named contact point
+- maintains a calm, empathetic, factual tone
+
+Provide three versions:
+A. A phone call script (dot points for the call)
+B. A follow-up email (under 200 words)
+C. An SMS (under 160 characters)</pre>
+</div>
+<p><strong>Bonus prompt (reverse audit):</strong></p>
+<div class="copy-block">
+  <button class="copy-btn">Copy</button>
+  <pre>Now list every problem in the original draft email. For each problem,
+state:
+- what the text says
+- why it is a governance failure
+- the potential consequence if sent
+- what the corrected version should say instead
+
+Present this as a table.</pre>
+</div>
+<hr>
+<h2>Exercise A3: Attendance Triage Under Uncertainty</h2>
+<p>Paste the <strong>Messy Attendance CSV</strong> (Artifact 01 from Messy Mini-Pack), then add:</p>
+<div class="copy-block">
+  <button class="copy-btn">Copy</button>
+  <pre>This attendance export has data quality issues. Please:
+
+1. List every data quality problem you find (duplicates, inconsistent
+   codes, missing fields, impossible values, typos, format issues).
+2. For each problem, suggest how to fix it or what to verify.
+3. After noting the issues, produce a triage list: students who need
+   parent contact this week, ranked by urgency (highest
+   absence/late pattern first).
+4. For each student on the triage list, draft a one-sentence contact
+   note appropriate to their situation.
+
+Where data is uncertain, note what you are assuming and what needs to
+be verified in the source system.</pre>
+</div>
+<p><strong>Bonus prompt (comparison):</strong></p>
+<div class="copy-block">
+  <button class="copy-btn">Copy</button>
+  <pre>Now compare this messy export against the clean attendance data from
+the main Data Pack (below). Flag any discrepancies between the two
+data sets for the same students and dates.
+
+[Paste Artifact 01 from the main Data Pack here]</pre>
+</div>
+<hr>
+<h2>Exercise A4: Policy Alignment Change Log</h2>
+<p>Paste the <strong>Old Local Procedure</strong> (Artifact 09) AND the <strong>Authority Bulletin</strong> (Artifact 10), then add:</p>
+<div class="copy-block">
+  <button class="copy-btn">Copy</button>
+  <pre>Compare the school&#x27;s local procedure with the authority bulletin.
+
+Output a change log table with columns:
+- Requirement (what the bulletin requires)
+- CurrentProcedure (what the school currently says)
+- Gap or Risk (where they don&#x27;t align)
+- RequiredUpdate (what needs to change)
+- OwnerRole (who should make the change)
+- Evidence (how you prove compliance)
+
+Then draft a revised 10-14 step procedure that meets the new minimum
+expectations. Include owners and timeframes for each step.</pre>
+</div>
+<p><strong>Bonus prompt (implementation plan):</strong></p>
+<div class="copy-block">
+  <button class="copy-btn">Copy</button>
+  <pre>Based on the gap analysis, create a 4-week implementation plan.
+For each week, list:
+- what changes need to be made
+- who is responsible
+- what evidence of completion looks like
+- what the risk is if this step is delayed
+
+Format as a table with columns: Week, Action, Owner, Evidence, Risk.</pre>
+</div>
+<hr>
+<h2>Exercise A5: Messy Minutes to Action Register</h2>
+<p>Paste the <strong>Messy Exec Meeting Notes</strong> (Artifact 11), then add:</p>
+<div class="copy-block">
+  <button class="copy-btn">Copy</button>
+  <pre>These meeting notes are messy and incomplete. Please:
+
+1. Format as professional meeting minutes with clear headings
+2. Extract all action items into a table: Action, Owner, DueDate, Status
+3. Where the owner is unclear, write &quot;OWNER TBC&quot; and suggest who it
+   might be
+4. Where the date is vague, write &quot;DATE TBC&quot; and suggest a reasonable
+   deadline
+5. List any items that sound like decisions but are not clearly
+   confirmed — mark these as &quot;DECISION TBC&quot;
+6. Draft a 5-sentence email summary to send to attendees, asking them
+   to confirm their action items</pre>
+</div>
+<p><strong>Bonus prompt (complaints template):</strong></p>
+<div class="copy-block">
+  <button class="copy-btn">Copy</button>
+  <pre>The meeting notes mention needing a complaints acknowledgement template.
+Using the school&#x27;s Complaints Handling Policy (below) as a guide,
+draft an acknowledgement email template with placeholders like
+[Parent Name], [Date Received], [Issue Summary], [Contact Person],
+[Next Step Date].
+
+The template should be under 150 words, empathetic, and professional.
+
+[Paste Artifact 09 — Old Local Procedure here]</pre>
+</div>
+<hr>
+<h2>Verification Prompts (Use with Any Exercise)</h2>
+<h3>Privacy check</h3>
+<div class="copy-block">
+  <button class="copy-btn">Copy</button>
+  <pre>Review the text below for any potential privacy breaches. Flag
+anywhere that:
+- another student is identified (directly or by implication)
+- personal information could be inferred
+- health or behavioural details are disclosed
+List each issue with a suggested fix.</pre>
+</div>
+<h3>Over-promise check</h3>
+<div class="copy-block">
+  <button class="copy-btn">Copy</button>
+  <pre>Review the text below and flag any promises, commitments, or
+guarantees that:
+- have not been formally decided
+- the school cannot reasonably guarantee
+- imply specific outcomes for other students
+For each, suggest alternative wording that is factual without
+over-committing.</pre>
+</div>
+<h3>Compliance check</h3>
+<div class="copy-block">
+  <button class="copy-btn">Copy</button>
+  <pre>Compare the text below against these requirements:
+[Paste Artifact 10 — Authority Bulletin]
+Flag any areas where the text does not meet the minimum expectations.
+For each gap, suggest specific wording that would bring it into
+compliance.</pre>
+</div>
+<hr>
+<h2>Quick Reference: Advanced Prompt Patterns</h2>
+<table>
+  <tr>
+    <th>Pattern</th>
+    <th>When to use</th>
+    <th>Example starter</th>
+  </tr>
+  <tr>
+    <td><strong>Reconcile</strong></td>
+    <td>Multiple sources conflict</td>
+    <td>&quot;Using these documents about the same event...&quot;</td>
+  </tr>
+  <tr>
+    <td><strong>Audit</strong></td>
+    <td>Check for governance failures</td>
+    <td>&quot;Review this for privacy breaches...&quot;</td>
+  </tr>
+  <tr>
+    <td><strong>Clean</strong></td>
+    <td>Messy data needs fixing</td>
+    <td>&quot;List every data quality problem...&quot;</td>
+  </tr>
+  <tr>
+    <td><strong>Compare</strong></td>
+    <td>Old vs new requirements</td>
+    <td>&quot;Compare the local procedure with...&quot;</td>
+  </tr>
+  <tr>
+    <td><strong>Extract</strong></td>
+    <td>Structure from chaos</td>
+    <td>&quot;Extract all action items into a table...&quot;</td>
+  </tr>
+  <tr>
+    <td><strong>Verify</strong></td>
+    <td>Before sending anything</td>
+    <td>&quot;Flag anything that needs human confirmation...&quot;</td>
+  </tr>
+</table>
+<hr>
+<p><em>Real Minds AI | wisdom, amplified | realmindsai.com.au</em></p>
+  </div>
+
+  <footer>
+    <div class="container">
+      <img src="../assets/rmai_logo.png" alt="Real Minds AI">
+      <div class="tagline">wisdom, amplified</div>
+      <div><a href="https://realmindsai.com.au">realmindsai.com.au</a></div>
+      <div style="margin-top: 8px; font-size: 12px; color: #8D8D92;">&copy; 2026 Real Minds Artificial Intelligence. All data is entirely fictional.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const pre = this.parentElement.querySelector('pre');
+        const text = pre.textContent;
+        navigator.clipboard.writeText(text).then(() => {
+          this.textContent = 'Copied!';
+          this.classList.add('copied');
+          setTimeout(() => {
+            this.textContent = 'Copy';
+            this.classList.remove('copied');
+          }, 2000);
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

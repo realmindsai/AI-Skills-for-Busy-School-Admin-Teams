@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messy Mini-Pack | Real Minds AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --purple: #A77ACD;
+      --purple-dark: #7B5BA0;
+      --orange: #F26541;
+      --black: #1A1B25;
+      --slate: #373841;
+      --offwhite: #FAF9F7;
+      --oat: #F1E8D7;
+      --blue: #5791C7;
+      --green: #349990;
+      --border: #E7E7EA;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Epilogue', 'Inter', 'SF Pro', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: var(--offwhite);
+      color: var(--black);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #A77ACD 0%, #7B5BA0 60%, #5D3F7E 100%);
+      padding: 36px 0 32px;
+      text-align: center;
+      color: white;
+    }
+
+    header img { height: 48px; margin-bottom: 12px; }
+    header h1 { font-size: 26px; font-weight: 700; line-height: 1.2; margin-bottom: 4px; }
+    header p { font-size: 16px; opacity: 0.85; font-weight: 400; }
+    header .back-link { display: inline-block; margin-top: 12px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; }
+    header .back-link:hover { color: white; }
+
+    .content { padding: 32px 0 48px; }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--purple);
+      margin: 36px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 3px solid var(--purple);
+    }
+
+    h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--slate);
+      margin: 20px 0 8px;
+    }
+
+    p { margin: 8px 0; font-size: 15px; }
+
+    ul, ol { padding-left: 24px; margin: 8px 0; }
+    li { margin-bottom: 4px; font-size: 15px; }
+
+    strong { color: var(--black); font-weight: 600; }
+
+    .note {
+      background: var(--oat);
+      border-left: 4px solid var(--orange);
+      padding: 12px 16px;
+      border-radius: 0 6px 6px 0;
+      margin: 12px 0;
+      font-size: 14px;
+    }
+
+    .use-with {
+      font-size: 13px;
+      color: var(--slate);
+      font-weight: 500;
+      margin: 4px 0 8px;
+    }
+
+    blockquote {
+      border-left: 4px solid var(--purple);
+      background: white;
+      padding: 12px 16px;
+      margin: 12px 0;
+      border-radius: 0 6px 6px 0;
+      font-style: italic;
+      color: var(--slate);
+      font-size: 14px;
+    }
+    blockquote p { margin: 4px 0; font-size: 14px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 14px;
+    }
+    th {
+      background: var(--purple-dark);
+      color: white;
+      font-weight: 600;
+      padding: 8px 10px;
+      text-align: left;
+    }
+    td {
+      border: 1px solid var(--border);
+      padding: 6px 10px;
+    }
+    tr:nth-child(even) { background: white; }
+    tr:nth-child(odd) { background: var(--offwhite); }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 28px 0;
+    }
+
+    /* Copy block */
+    .copy-block {
+      position: relative;
+      margin: 12px 0;
+    }
+
+    .copy-block pre {
+      background: #1A1B25;
+      color: #E8E8EC;
+      padding: 16px 20px;
+      padding-right: 80px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+      font-size: 13px;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: var(--purple);
+      color: white;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      z-index: 2;
+    }
+
+    .copy-btn:hover { background: var(--purple-dark); }
+
+    .copy-btn.copied {
+      background: var(--green);
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 0 40px;
+      border-top: 1px solid var(--border);
+      color: var(--slate);
+      font-size: 14px;
+    }
+    footer img { height: 32px; margin-bottom: 6px; }
+    footer .tagline { font-style: italic; color: var(--purple); margin: 4px 0 8px; }
+    footer a { color: var(--purple); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 20px; }
+      header { padding: 24px 0 20px; }
+      .copy-block pre { padding-right: 20px; padding-top: 44px; }
+      .copy-btn { top: 6px; right: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <img src="../assets/rmai_logo.png" alt="Real Minds AI">
+      <h1>Messy Mini-Pack</h1>
+      <p>Intentionally broken data for advanced exercises</p>
+      <a href="../" class="back-link">&larr; Back to workshop materials</a>
+    </div>
+  </header>
+
+  <div class="container content">
+<p><strong>Workshop:</strong> AI Skills for Busy School Admin Teams (Advanced Exercises)</p>
+<p><strong>Date:</strong> 5 March 2026 | <strong>Real Minds AI</strong></p>
+<p><strong>Important:</strong> All data is <strong>entirely fictional and synthetic</strong>. This pack is <strong>intentionally messy</strong> — it contains duplicates, contradictions, missing fields, privacy traps, and ambiguous wording. This is realistic. Your job is to use AI to find the problems, not to trust AI to fix them silently.</p>
+<hr>
+<h2>Artifact 01 — Attendance Export (Partial, Messy)</h2>
+<p><strong>Use with:</strong> Exercise A3 (Attendance Triage Under Uncertainty)</p>
+<div class="copy-block">
+  <button class="copy-btn">Copy</button>
+  <pre>Date,StudentID,YearLevel,Homeroom,AttendanceCode,MinutesLate,ExplanationText,ParentContactStatus,Prior20DaysAbsences,Prior20DaysLate,SupportPlan,EAL
+2026-03-03,S1019,8,8C,U,,,Not yet,5,1,N,N
+2026-03-03,S1048,8,8A,P,0,,,6,2,Y,N
+2026-03-03,S1188,8,8B,U,0,,SMS sent,4,2,N,Y
+2026-03-03,S1202,7,7A,E,0,Wellbeing plan - partial day,Wellbeing note,7,1,Y,Y
+2026-03-03,S1121,10,10A,L,14,Late - traffic,Call attempted,1,6,N,N
+2026-03-04,S1019,8,8C,Unexplained,0,,Call made,5,1,N,N
+2026-03-04,S1188,8,8B,U,9,Missed bus? (unconfirmed),,4,2,N,Y
+2026-03-04,S1188,8,8B,U,9,Missed bus? (unconfirmed),,4,2,N,Y
+2026-03-04,S1007,7,7A,LATE,7,Late bus connection,SMS sent,2,4,N,Y
+2026-03-04,S1102,11,11A,L,-3,Late - unknown,SMS sent,0,3,N,N
+2026-03-04,S1095,,7B,E,0,Medical certificate provided,Front office sighted,2,0,N,N
+2026-03-05,S12O2,7,7A,E,0,GP note received,Front office sighted,7,1,Y,Y
+05/03/2026,S1048,8,8A,U,0,,Not yet,6,2,Y,N
+2026-03-05,S1089,9,9D,X,0,,,3,5,N,N
+2026-03-05,S1033,9,9B,P,0,,,1,0,N,N
+2026-03-05,S1121,10,10A,,12,Late - traffic,SMS sent,1,6,N,N
+2026-03-06,S1019,8,8C,U,0,,Voicemail left (07:42); asked to call back,5,1,N,N
+2026-03-06,S1188,8,8B,P,0,,,4,2,N,Y
+2026-03-06,S1202,7,7A,U,0,,Call attempted,,1,Y,Y
+2026-03-06,S1048,8,8Z,E,0,Medical appointment,Parent portal note,6,2,Y,N</pre>
+</div>
+<p><strong>Standard codes:</strong> P = Present, L = Late, U = Unexplained, E = Explained</p>
+<hr>
+<h2>Artifact 02 — Incident Account: Yard Duty Staff</h2>
+<p><strong>Use with:</strong> Exercise A1 (Incident Pack Assembly)</p>
+<div class="copy-block">
+  <button class="copy-btn">Copy</button>
+  <pre>INCIDENT ACCOUNT — Yard Duty Staff Note (RAW)
+School: Marraburra Secondary College
+Date: Fri 27 Feb 2026
+Entered: Fri 27 Feb 2026 15:46
+Staff role: Teacher on Yard Duty (North yard)
+
+What I saw / heard
+- At approx 13:05 I heard yelling near the basketball courts (north side).
+- I walked quickly toward the courts and saw two Year 8 students
+  (StudentIDs: S1048 and S1188) in a physical altercation.
+- It looked like there was pushing and possibly a punch thrown
+  (I did not clearly see contact — may have been blocked by other students).
+- A bystander called out &quot;Stop it, Sam!&quot; (not sure which student they meant).
+  NOTE: I did not confirm any names.
+
+Actions
+- I instructed surrounding students to move back and called for additional
+  staff support.
+- The two students were separated within about 30 seconds of my arrival.
+- I directed both students to sit on opposite sides of the court.
+- Education Support staff arrived and assisted escorting students.
+
+Injuries
+- I noticed S1188 holding their left arm. Unsure if injury occurred during
+  incident or earlier.
+- No other injuries observed by me.
+
+Possible context (UNCONFIRMED)
+- Several students said there has been &quot;ongoing drama&quot; in a group chat.
+- I did not verify this and did not view any messages.
+
+CCTV / environment
+- Scaffolding near Block B walkway might obstruct camera view.
+- The area felt crowded today.
+
+Open questions
+- Confirm exact time of start (I arrived after voices started).
+- Confirm if any punch occurred (I am not certain).
+- Identify witnesses (students) and obtain statements.</pre>
+</div>
+<hr>
+<h2>Artifact 03 — Incident Account: Student Services</h2>
+<p><strong>Use with:</strong> Exercise A1 (Incident Pack Assembly)</p>
+<div class="copy-block">
+  <button class="copy-btn">Copy</button>
+  <pre>INCIDENT ACCOUNT — Student Services Intake Note (RAW)
+School: Marraburra Secondary College
+Date: Fri 27 Feb 2026
+Entered: Fri 27 Feb 2026 14:10
+Staff role: Student Services Officer (Wellbeing)
+
+Intake summary
+- Two Year 8 students presented to Student Services: S1048 and S1188.
+- Students arrived at approx. 13:12 (bell had just gone for Period 5).
+- Students reported verbal argument then &quot;pushing&quot;.
+  Both students stated there was NO punching.
+- Both were calm after ~10 minutes.
+
+First aid
+- S1188 had a small graze to left elbow and requested a bandage.
+- S1048 reported no injury.
+
+Restorative conversation
+- Brief restorative chat at approx. 13:35 with both students.
+- Agreement: avoid contact for remainder of day; follow-up meeting next week.
+
+Parent contact attempts (times uncertain)
+- S1188 parent: call at approx. 13:30, voicemail. SMS sent.
+- S1048 parent: contacted, requested email summary (time recorded as 13:25
+  in my notes, but may be the attempt time rather than successful contact).
+
+Context (UNCONFIRMED)
+- Students referenced &quot;messages online&quot; earlier in the week.
+  No evidence provided.
+
+Missing information
+- Exact start time
+- Independent witness accounts
+- CCTV availability</pre>
+</div>
+<hr>
+<h2>Artifact 04 — First Aid Log Excerpt</h2>
+<p><strong>Use with:</strong> Exercise A1 (Incident Pack Assembly)</p>
+<div class="copy-block">
+  <button class="copy-btn">Copy</button>
+  <pre>Date,Time,StudentID,PresentingIssue,Treatment,Disposition,Notes
+2026-02-27,13:18,S1188,Graze (left elbow),Cleaned + dressed,Returned to class (P5),Time recorded by first aid officer
+2026-02-27,13:20,S1048,Nil reported,N/A,Returned to Student Services,Student stated no injury
+2026-02-27,13:16,S1188,Graze (left elbow),Bandage,Student Services,Time may be approximate</pre>
+</div>
+<p><strong>Note:</strong> There are two entries for S1188 at different times with slightly different treatment descriptions.</p>
+<hr>
+<h2>Artifact 05 — Parent Contact Log (Partial)</h2>
+<p><strong>Use with:</strong> Exercise A1 (Incident Pack Assembly)</p>
+<div class="copy-block">
+  <button class="copy-btn">Copy</button>
+  <pre>Date,CaseID,StudentID,Channel,Time,Outcome,Notes,StaffRole
+2026-02-27,INC-2026-018,S1048,Phone call,13:25,Attempted,No answer; left voicemail,AP Wellbeing
+2026-02-27,INC-2026-018,S1048,Phone call,13:32,Successful contact,Parent requested email summary,AP Wellbeing
+2026-02-27,INC-2026-018,S1048,Email,15:05,Sent,Summary sent to parent email on file,AP Wellbeing
+2026-02-27,INC-2026-018,S1188,Phone call,13:30,Attempted,Voicemail,Student Services
+2026-02-27,INC-2026-018,S1188,SMS,13:35,Sent,Please call school re: lunchtime incident,Student Services
+2026-02-28,INC-2026-018,S1188,Phone call,09:10,, ,Student Services
+2026-02-27,,S1188,Email,16:40,Drafted,Draft only; not sent (unclear),</pre>
+</div>
+<p><strong>Note:</strong> Last two rows have missing fields (outcome, case ID, staff role).</p>
+<hr>
+<h2>Artifact 06 — CCTV Maintenance Ticket</h2>
+<p><strong>Use with:</strong> Exercise A1 (Incident Pack Assembly)</p>
+<div class="copy-block">
+  <button class="copy-btn">Copy</button>
+  <pre>CCTV MAINTENANCE TICKET
+Ticket ID: FAC-2026-0331
+Logged: Thu 26 Feb 2026 16:22
+Area: North Yard / Block B walkway
+
+Issue
+- Camera B-North-02 reported intermittent dropouts.
+- Scaffolding may obstruct field of view toward basketball courts.
+
+Notes
+- 26 Feb 17:05: reboot completed.
+- 27 Feb 12:40: camera status shows ONLINE in dashboard.
+- 27 Feb 13:10-13:25: dashboard shows &quot;NO SIGNAL&quot; (unclear if network or camera).
+- 27 Feb 14:05: camera status shows ONLINE again.
+
+Action
+- Check footage availability for 27 Feb between 12:50 and 13:30.
+- If footage missing, record in incident evidence log.
+
+Caution
+- Even if camera is online, scaffolding may block key angles.</pre>
+</div>
+<p><strong>Note:</strong> The &quot;NO SIGNAL&quot; window (13:10-13:25) overlaps with the incident time.</p>
+<hr>
+<h2>Artifact 07 — Problematic Draft Email (DO NOT SEND)</h2>
+<p><strong>Use with:</strong> Exercise A2 (Fix the Problematic Email)</p>
+<div class="copy-block">
+  <button class="copy-btn">Copy</button>
+  <pre>DRAFT — NOT FOR SENDING
+
+Subject: Update re: fight at basketball courts — actions taken
+
+Dear Parent/Carer,
+
+I&#x27;m writing to let you know your child was involved in a fight at lunchtime
+today. The other student has a history of behaviour issues and we will be
+suspending them for 5 days. We have also told their parents.
+
+Your child said the other student punched first and we have CCTV that
+clearly shows this. We will ensure this never happens again.
+
+Please reply with any screenshots of the group chat so we can take
+further action.
+
+Kind regards,
+[Staff name]
+Assistant Principal Wellbeing
+Marraburra Secondary College</pre>
+</div>
+<p><strong>Problems to find:</strong> At least 6 governance failures including privacy breaches, over-promises, false evidence claims, and inappropriate evidence requests.</p>
+<hr>
+<h2>Artifact 08 — Complaints Register (Partial, Messy)</h2>
+<p><strong>Use with:</strong> Any exercise as bonus context</p>
+<div class="copy-block">
+  <button class="copy-btn">Copy</button>
+  <pre>CaseID,DateReceived,Channel,ComplainantType,IssueCategory,Cohort,StudentID,Status,OwnerRole,NextStep,RiskRating,ContactEmail
+COMP-2026-005,2026-02-10,Email,Parent/Carer,Bullying (online/offline),Year 9,S1089,Open,AP Wellbeing,Awaiting meeting booking,High,
+COMP-2026-007,2026-02-24,Phone,Parent/Carer,Communication delay,Year 8,S1188,Closed,Front Office Manager,Resolved by call,Low,
+,2026-03-02,Email,Parent/Carer,Bullying,Year 9,S1089,Open,,No acknowledgement sent yet,High,renee.nguyen@example.com
+COMP-2026-005,2026-02-12,In person,Parent/Carer,Bullying,Year 9,S1089,Open,AP Wellbeing,Added note: group chat,High,
+COMP-2026-009,2026-03-01,Social media,Community,Rumour (vaping),Year 10,,In progress,Principal Team,Need verify evidence,Med,</pre>
+</div>
+<p><strong>Note:</strong> Missing case IDs, duplicate entries for COMP-2026-005, missing owner for 2 March entry.</p>
+<hr>
+<h2>Artifact 09 — Old Local Procedure Excerpt</h2>
+<p><strong>Use with:</strong> Exercise A4 (Policy Alignment)</p>
+<div class="copy-block">
+  <button class="copy-btn">Copy</button>
+  <pre>LOCAL PROCEDURE — Version in staff handbook (dated 2024)
+Parent Communication and Complaints Handling — Extract
+
+Incident communication
+- Staff should notify parents/carers after incidents when it seems appropriate.
+- The preferred method is phone call, but email may be used if time is limited.
+- Records of parent contact should be kept where possible.
+
+Incident recording
+- Incident notes should be entered into SafeTrack when convenient, ideally
+  within a few days.
+- Staff should include relevant context to help understanding.
+
+Complaints acknowledgement
+- The school aims to acknowledge complaints within 5 business days where
+  possible.
+- If staff are busy, acknowledgement may be delayed.
+
+Privacy
+- Staff should be mindful of privacy but should also provide enough detail
+  for parents to understand what occurred.</pre>
+</div>
+<hr>
+<h2>Artifact 10 — Authority Bulletin (New Expectations)</h2>
+<p><strong>Use with:</strong> Exercise A4 (Policy Alignment)</p>
+<div class="copy-block">
+  <button class="copy-btn">Copy</button>
+  <pre>STATE EDUCATION AUTHORITY — OPERATIONAL BULLETIN OB-2026-04
+Issued: 15 Feb 2026 | Effective: From Monday 2 March 2026
+
+Minimum expectations — incident recording and parent/carer notification
+
+1 Recording timeframe
+- Physical and notifiable incidents must be entered into the incident
+  management system no later than 24 hours after the incident is known.
+
+2 Record quality
+- Records must be factual and avoid speculation.
+- Unconfirmed information must be clearly marked as UNCONFIRMED.
+- Each record must include: date/time, location, category, roles of those
+  involved, immediate actions, parent contact attempts and outcomes,
+  evidence sources, follow-up owner, review date.
+
+3 Parent/carer notification
+- For physical incidents, make reasonable attempts to contact a parent/carer
+  on the same day.
+- If same-day contact is not possible, record attempts and continue the
+  next school day.
+- Do not disclose personal information about other students.
+
+4 Messaging caution
+- Avoid sending sensitive personal information via unsecured channels.</pre>
+</div>
+<hr>
+<h2>Artifact 11 — Messy Exec Meeting Notes</h2>
+<p><strong>Use with:</strong> Exercise A5 (Messy Minutes to Action Register)</p>
+<div class="copy-block">
+  <button class="copy-btn">Copy</button>
+  <pre>EXECUTIVE TEAM MEETING — RAW NOTES (INTENTIONALLY MESSY)
+Date/time: Monday 2 March 2026, 08:15-08:45
+Attendees: Principal, AP Wellbeing, AP Curriculum, Business Manager,
+           Wellbeing Leader, Facilities Manager
+
+Attendance
+- Yr 8 and Yr 7: unexplained absences rising (esp 8C, 7A) — need &quot;a plan&quot;.
+- StudentIDs mentioned: S1019, S1188, S1202, S1048, S1121.
+- Action: &quot;send list to coordinators&quot; (who? by when?) maybe Wed?
+
+Incident follow-up (Fri 27 Feb, basketball court)
+- SafeTrack entry: not sure if done / maybe draft.
+- Parent contact: one contacted (time unclear), one voicemail + SMS (same day).
+- CCTV: camera might be online but scaffolding blocks view / also &quot;no signal&quot;
+  around lunch?? (Facilities to confirm).
+- Action: witness statements (roles only) — due Tue (or Wed?) — owner??
+  (Wellbeing?)
+
+Building works (Block B)
+- B2-B6 closed from Mon 9 Mar for 3 weeks.
+- Need room moves + comms pack.
+- Action: draft room move list by Thu 5 Mar (APC + Timetable) — confirm.
+
+Board prep (Wed 18 Mar)
+- Need board paper: attendance + incident recording compliance + budget.
+- Action: budget commentary by Mon 9 Mar (BM).
+- Action: 10-slide deck outline (who drafts?) due mid-March.
+
+Complaints handling
+- Increase in complaints about bullying + delays.
+- Need acknowledgement template + escalation logic + complaint register
+  hygiene.
+
+Decision-ish
+- Increase supervision near courts during works.
+- Trial weekly attendance digest (pilot Year 8) — start &quot;soon&quot;.</pre>
+</div>
+<hr>
+<p><em>Real Minds AI | wisdom, amplified | realmindsai.com.au</em></p>
+  </div>
+
+  <footer>
+    <div class="container">
+      <img src="../assets/rmai_logo.png" alt="Real Minds AI">
+      <div class="tagline">wisdom, amplified</div>
+      <div><a href="https://realmindsai.com.au">realmindsai.com.au</a></div>
+      <div style="margin-top: 8px; font-size: 12px; color: #8D8D92;">&copy; 2026 Real Minds Artificial Intelligence. All data is entirely fictional.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const pre = this.parentElement.querySelector('pre');
+        const text = pre.textContent;
+        navigator.clipboard.writeText(text).then(() => {
+          this.textContent = 'Copied!';
+          this.classList.add('copied');
+          setTimeout(() => {
+            this.textContent = 'Copy';
+            this.classList.remove('copied');
+          }, 2000);
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
