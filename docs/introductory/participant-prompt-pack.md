@@ -193,6 +193,39 @@ Now generate an SMS version (under 160 characters) for each letter level.
 
 ---
 
+## Exercise 9: Spot the Error — Calendar Checker
+
+Paste the **Draft Term 2 Calendar** from your Data Pack (Artifact 08), then add:
+
+```
+Here is our draft Term 2 calendar for a Victorian secondary school.
+Check it for:
+1. Any dates where the day-of-week does not match the actual calendar
+2. Clashes with known Victorian public holidays
+3. Events double-booked on the same day
+4. NAPLAN scheduling issues
+5. Any other errors or concerns you notice
+```
+
+---
+
+## Exercise 10: Vendor Quote Comparison
+
+Paste the **Three Vendor Quotes** from your Data Pack (Artifact 09), then add:
+
+```
+Here are quotes from three suppliers for office stationery. They arrived
+in different formats. Please:
+1. Create a comparison table: Item, OfficePro price, SchoolSupply price,
+   Aussie Ed price (all inc GST)
+2. Normalise pack sizes — note where quantities differ
+3. Highlight the cheapest option for each item
+4. Flag any items missing from a supplier
+5. Calculate the total cost from each supplier (including delivery)
+```
+
+---
+
 ## Bonus Prompts for After the Workshop
 
 ### Turn meeting notes into minutes
@@ -208,22 +241,6 @@ Here are raw meeting notes. Please:
 Please review this email draft. List any errors, flag any tone issues,
 then rewrite it to be warm, professional, and clear. Rate both versions
 on warmth (1-5), professionalism (1-5), and clarity (1-5).
-```
-
-### Vendor quote comparison
-```
-Here are quotes from three suppliers. Create a comparison table with
-columns: Item, Supplier A price, Supplier B price, Supplier C price,
-Best value. Highlight the cheapest option for each item.
-```
-
-### Calendar error checker
-```
-Here is our draft Term 2 calendar. Check it for:
-1. Any dates that fall on weekends
-2. Clashes with known public holidays
-3. Events scheduled too close together
-4. Any other errors or concerns you notice
 ```
 
 ---

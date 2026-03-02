@@ -277,6 +277,98 @@ Action register
 
 ---
 
+## Artifact 08 — Draft Term 2 Calendar
+
+**Use with:** Exercise 9 (Spot the Error / Calendar Checker)
+
+```
+MARRABURRA SECONDARY COLLEGE — DRAFT Term 2 Calendar 2026
+
+Week  Date         Day        Event
+  1   Mon 20 Apr   Monday     Term 2 begins — staff return
+  1   Tue 21 Apr   Tuesday    Students commence
+  1   Fri 24 Apr   Friday     ANZAC Day assembly (early finish 2:30pm)
+  2   Sat 25 Apr   Saturday   ANZAC Day public holiday
+  2   Wed 29 Apr   Wednesday  Year 7 immunisations
+  3   Mon 5 May    Monday     Curriculum Day (student-free)
+  3   Wed 7 May    Wednesday  Year 9 careers expo 9:00-12:00
+  3   Wed 7 May    Wednesday  Whole-school cross-country carnival
+  4   Tue 13 May   Wednesday  NAPLAN Writing — Years 7 and 9
+  4   Wed 14 May   Wednesday  NAPLAN Reading — Years 7 and 9
+  4   Thu 15 May   Thursday   NAPLAN Numeracy — Years 7 and 9
+  5   Mon 19 May   Monday     Year 10 work experience week begins
+  5   Wed 21 May   Wednesday  Parent-Teacher Interviews 4:00-8:00pm
+  6   Mon 26 May   Monday     Queen's Birthday public holiday
+  6   Thu 29 May   Thursday   Year 8 camp departs (3 days)
+  7   Mon 2 Jun    Monday     Report writing day (student-free)
+  7   Wed 4 Jun    Wednesday  VCE GAT exam
+  8   Mon 9 Jun    Monday     Queens Birthday public holiday
+  8   Fri 13 Jun   Friday     Semester 1 reports published
+  9   Mon 16 Jun   Monday     Year 12 exam week begins
+  9   Thu 19 Jun   Thursday   Year 8 immunisations round 2
+ 10   Fri 26 Jun   Friday     Last day Term 2 — early finish 2:30pm
+```
+
+**Note:** This calendar contains deliberate errors for the exercise. Can you find them all?
+
+---
+
+## Artifact 09 — Vendor Quotes (Three Suppliers)
+
+**Use with:** Exercise 10 (Vendor Quote Comparison)
+
+```
+--- QUOTE 1: OfficePro Direct ---
+From: sales@officeprodirect.com.au
+Date: 27 Feb 2026
+Subject: RE: Stationery order Marraburra SC
+
+Hi there,
+
+Happy to quote on the below. Prices are ex-GST, free delivery over $500.
+
+- A4 copy paper (80gsm white) 10 reams: $52.00
+- Whiteboard markers (assorted 10-pack): $18.50
+- Binder clips 32mm box of 12: $4.20
+- Sticky notes 76x76mm 12-pack: $14.90
+- Laminating pouches A4 100-pack: $28.00
+- Printer toner (HP 26X black): $89.00
+- Glue sticks 36g 10-pack: $9.50
+
+Subtotal: $216.10 + GST = $237.71
+
+Cheers,
+Tanya
+
+--- QUOTE 2: SchoolSupply Co ---
+From: orders@schoolsupplyco.com.au
+
+Item                           Qty    Unit Price (inc GST)   Total
+Copy Paper A4 80gsm (ream)       10         $5.72            $57.20
+Whiteboard Markers Asst (10pk)    1        $21.45            $21.45
+Binder Clips 32mm (box/12)       1         $3.85             $3.85
+Post-it Notes 76mm (12pk)        1        $16.50            $16.50
+Laminating Pouches A4 (100pk)    1        $25.30            $25.30
+HP Toner 26X Black               1        $95.70            $95.70
+Glue Sticks 36g (10pk)           1        $11.00            $11.00
+                                           TOTAL:          $231.00
+Delivery: Free over $200. Lead time 3-5 business days.
+
+--- QUOTE 3: Aussie Ed Supplies ---
+Phone quote transcribed by front office:
+
+- Paper (A4 white 80g) 10 reams — $48 plus GST so $52.80
+- Whiteboard markers pack — she said $16.50 inc GST for pack of 8 (not 10)
+- Binder clips big ones — $4.40 inc GST per box
+- Those yellow sticky notes — $13.20 inc GST for a pack of 10 (not 12)
+- Laminating sleeves A4 box of 100 — $31.90 inc GST
+- HP black toner, thinks its the 26X — $82.50 inc GST
+- Glue sticks — doesn't stock, would need to order separately
+- Delivery: $15 flat rate
+```
+
+---
+
 ## Artifact 15 — Storm Scenario Brief
 
 **Use with:** Exercise 3 (Crisis Communication)

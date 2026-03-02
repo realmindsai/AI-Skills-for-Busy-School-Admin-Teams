@@ -216,27 +216,21 @@ Incident Pack Assembly
 
 ### Instructions (20 minutes)
 
-You have **5 documents** about the same incident. Open from your Messy Mini-Pack:
-- Artifact 02: Yard duty staff account
-- Artifact 03: Student services intake note
-- Artifact 04: First aid log
-- Artifact 05: Parent contact log
-- Artifact 06: CCTV maintenance ticket
+Open **5 documents** from your Messy Mini-Pack: Artifacts 02-06 (yard duty account, student services note, first aid log, parent contact log, CCTV ticket)
 
 Paste your context card, then **all five documents**, then add:
 
 > *Using these five documents about the same incident, please:*
-> *1. Create a Known / Unconfirmed / Unknown fact list (bullet points)*
-> *2. Produce a SafeTrack incident entry in structured fields: Date, TimeRange, Location, Category, PeopleInvolved (StudentIDs only), ImmediateActions, Injuries, ParentContactAttempts, Evidence, FollowUpOwner, ReviewDate*
-> *3. List exactly what must be verified by a human before finalising*
+> *1. Create a Known / Unconfirmed / Unknown fact list*
+> *2. Produce a SafeTrack incident entry with structured fields (Date, TimeRange, Location, Category, PeopleInvolved, ImmediateActions, Injuries, ParentContact, Evidence, FollowUpOwner, ReviewDate)*
+> *3. List what must be verified by a human before finalising*
 >
-> *Constraints: do not invent facts. Clearly mark all conflicts between sources.*
+> *Do not invent facts. Clearly mark all conflicts between sources.*
 
 ### What to look for
 
 - Does the AI catch the **time discrepancy** between the two accounts?
-- Does it correctly flag the CCTV "no signal" gap?
-- Does it mark the "punch" claim as unconfirmed?
+- Does it flag the CCTV "no signal" gap and the "punch" claim?
 
 ---
 
@@ -274,16 +268,16 @@ Fix the Problematic Email
 
 Read the **Problematic Draft Email** (Artifact 07 in your Messy Mini-Pack):
 
-| Problem | Why it matters |
-|---------|---------------|
-| Mentions "the other student" and implies identity | **Privacy breach** — must not disclose info about other students |
-| Says student "has a history of behaviour issues" | **Privacy breach** — disclosing another student's record |
-| Claims "we will be suspending them for 5 days" | **Over-promise** — outcome not yet decided or approved |
-| Claims "CCTV clearly shows this" | **False claim** — CCTV had "no signal" during the incident |
-| Promises "this will never happen again" | **Over-promise** — cannot guarantee future behaviour |
-| Asks parent for "screenshots of the group chat" | **Evidence handling risk** — may breach other students' privacy |
+| Problem | Category |
+|---------|----------|
+| Implies the other student's identity | **Privacy breach** |
+| Says student "has a history of behaviour issues" | **Privacy breach** |
+| Promises "suspending them for 5 days" | **Over-promise** (not yet decided) |
+| Claims "CCTV clearly shows this" | **False claim** (CCTV had no signal) |
+| Promises "this will never happen again" | **Over-promise** |
+| Asks for "screenshots of the group chat" | **Evidence risk** (other students' privacy) |
 
-> Every one of these could lead to a formal complaint, a privacy investigation, or a legal problem.
+> Every one of these could trigger a formal complaint or privacy investigation.
 
 ---
 
@@ -293,19 +287,11 @@ Read the **Problematic Draft Email** (Artifact 07 in your Messy Mini-Pack):
 
 ### Instructions (15 minutes)
 
-Paste your context card, then the **Problematic Draft Email** (Artifact 07), then add:
+Paste your context card, then **Artifact 07** (Problematic Draft Email), then add:
 
-> *This draft email is problematic and must not be sent as-is. Rewrite it so that it:*
-> *- does not mention or identify any other student*
-> *- does not promise specific outcomes (no "never again", no suspension details)*
-> *- does not claim evidence that has not been verified*
-> *- includes clear next steps with a timeframe and a named contact point*
-> *- maintains a calm, empathetic, factual tone*
+> *This draft email must not be sent as-is. Rewrite it so that it: does not identify any other student, does not promise specific outcomes, does not claim unverified evidence, includes next steps with a timeframe and contact point, and uses a calm, empathetic tone.*
 >
-> *Provide three versions:*
-> *A. A phone call script (dot points for the call)*
-> *B. A follow-up email (under 200 words)*
-> *C. An SMS (under 160 characters)*
+> *Provide three versions: A. Phone call script (dot points), B. Follow-up email (under 200 words), C. SMS (under 160 characters)*
 
 ### What to check
 
@@ -356,19 +342,16 @@ Attendance Triage Under Uncertainty
 ### The theory: real exports are never clean
 
 The attendance CSV in the Messy Mini-Pack has deliberate problems:
-- **Duplicate rows** — S1188 appears twice for the same date
-- **Inconsistent codes** — "Unexplained", "LATE", "X" instead of standard U, L codes
-- **Missing fields** — blank YearLevel, blank AttendanceCode, blank Prior20Days count
+- **Duplicates** — S1188 appears twice for the same date
+- **Inconsistent codes** — "Unexplained", "LATE", "X" instead of standard codes
+- **Missing fields** — blank YearLevel, blank AttendanceCode
 - **Impossible values** — MinutesLate of -3 (negative time)
-- **Typos** — "S12O2" instead of "S1202" (letter O instead of zero)
-- **Date format inconsistency** — one row uses DD/MM/YYYY instead of YYYY-MM-DD
-- **Non-standard homeroom** — "8Z" does not exist in the school
+- **Typos and format issues** — "S12O2" (letter O), DD/MM/YYYY mixed with YYYY-MM-DD, non-existent homeroom "8Z"
 
 ### What this exercise demonstrates
 
-- AI can **identify data quality issues** before you start analysis
-- Cleaning data is a necessary step before making decisions
-- AI handles the tedious work of spotting inconsistencies — you make the calls
+- AI spots data quality issues **before** you start analysis
+- AI handles the tedious work of finding inconsistencies — you make the calls
 
 ---
 
@@ -401,20 +384,31 @@ Paste the **Messy Attendance CSV** (Artifact 01 from Messy Mini-Pack), then add:
 
 ## Exercise A3: What You Learned
 
-### Data quality issues in the messy export
+### Data quality issues found (1 of 2)
 
-| Issue | Row | Detail |
-|-------|-----|--------|
-| Duplicate | S1188, 2026-03-04 | Exact duplicate row |
-| Code inconsistency | S1019, 2026-03-04 | "Unexplained" instead of "U" |
-| Code inconsistency | S1007, 2026-03-04 | "LATE" instead of "L" |
-| Unknown code | S1089, 2026-03-05 | "X" is not a valid attendance code |
-| Impossible value | S1102, 2026-03-04 | MinutesLate = -3 |
-| Missing field | S1095, 2026-03-04 | YearLevel is blank |
-| Typo (StudentID) | 2026-03-05 | "S12O2" should be "S1202" |
-| Date format | S1048, 2026-03-05 | "05/03/2026" instead of YYYY-MM-DD |
-| Invalid homeroom | S1048, 2026-03-06 | "8Z" does not exist |
-| Missing code | S1121, 2026-03-05 | AttendanceCode is blank |
+| Issue | Detail |
+|-------|--------|
+| Duplicate row | S1188 appears twice on 2026-03-04 |
+| Code: "Unexplained" | S1019 — should be "U" |
+| Code: "LATE" | S1007 — should be "L" |
+| Unknown code "X" | S1089, 2026-03-05 |
+| Impossible value | S1102 — MinutesLate = -3 |
+
+---
+
+<!-- _class: debrief -->
+
+## Exercise A3: What You Learned (continued)
+
+### Data quality issues found (2 of 2)
+
+| Issue | Detail |
+|-------|--------|
+| Missing YearLevel | S1095, 2026-03-04 |
+| StudentID typo | "S12O2" — letter O instead of zero |
+| Date format | S1048 uses DD/MM/YYYY instead of YYYY-MM-DD |
+| Invalid homeroom | S1048 assigned "8Z" (does not exist) |
+| Missing AttendanceCode | S1121, 2026-03-05 |
 
 ### The principle
 
@@ -437,21 +431,14 @@ Policy Alignment Change Log
 ### The theory: old policy vs new requirements
 
 - Schools receive new regulatory bulletins regularly
-- Comparing a 3-page local procedure against a 2-page authority bulletin **by hand** takes hours
-- AI can do a structured comparison in seconds — flagging gaps, risks, and required updates
+- Comparing a local procedure against a new bulletin **by hand** takes hours
+- AI produces a structured comparison in seconds — flagging gaps and required updates
 
 ### The "change log" pattern
 
-Ask AI to produce a table with:
+Ask AI to produce a table with columns:
 
-| Column | Purpose |
-|--------|---------|
-| **Requirement** | What the new bulletin requires |
-| **Current procedure** | What your local document says |
-| **Gap or risk** | Where they do not align |
-| **Required update** | What needs to change |
-| **Owner** | Who should make the change |
-| **Evidence** | How you prove compliance |
+**Requirement** → **Current procedure** → **Gap or risk** → **Required update** → **Owner** → **Evidence**
 
 This pattern works for **any** regulatory comparison — not just incident recording.
 
@@ -463,23 +450,16 @@ This pattern works for **any** regulatory comparison — not just incident recor
 
 ### Instructions (15 minutes)
 
-Paste the **Old Local Procedure** (Artifact 09) AND the **Authority Bulletin** (Artifact 10), then add:
+Paste **Artifact 09** (Old Local Procedure) AND **Artifact 10** (Authority Bulletin), then add:
 
-> *Compare the school's local procedure with the authority bulletin.*
-> *Output a change log table with columns: Requirement, CurrentProcedure, Gap or Risk, RequiredUpdate, OwnerRole, Evidence.*
-> *Then draft a revised 10-14 step procedure that meets the new minimum expectations. Include owners and timeframes for each step.*
+> *Compare the school's local procedure with the authority bulletin. Output a change log table with columns: Requirement, CurrentProcedure, Gap/Risk, RequiredUpdate, Owner, Evidence. Then draft a revised procedure that meets the new minimum expectations.*
 
 ### Key gaps to expect
 
-- **Recording timeframe:** Local says "within a few days" vs authority says "within 24 hours"
-- **Complaints acknowledgement:** Local says "5 business days" vs good practice is 2
-- **Unconfirmed marking:** Authority requires "UNCONFIRMED" labels; local procedure has no such requirement
-- **Privacy guidance:** Local says "provide enough detail"; authority says "do not disclose other students"
-
-### What to check
-
-- Has AI identified all the major gaps?
-- Is the revised procedure realistic for your school to implement?
+- **Recording timeframe:** "within a few days" vs "within 24 hours"
+- **Complaints acknowledgement:** "5 business days" vs good practice of 2
+- **Unconfirmed marking:** Authority requires it; local procedure does not
+- **Privacy guidance:** "provide enough detail" vs "do not disclose other students"
 
 ---
 
@@ -520,17 +500,15 @@ Messy Minutes to Action Register
 ### The theory: meeting notes are always messy
 
 The messy exec meeting notes (Artifact 11) have deliberate problems:
-- **Unclear ownership** — "send list to coordinators" (who sends? which coordinators?)
+- **Unclear ownership** — "send list to coordinators" (who? which ones?)
 - **Vague dates** — "maybe Wed?", "due Tue (or Wed?)", "start soon"
 - **Missing decisions** — "decision-ish" (was it actually decided?)
 - **Ambiguous actions** — "need a plan" (what plan? who writes it?)
 
 ### What this exercise demonstrates
 
-- AI can extract action items even from terrible notes
-- AI **flags ambiguity** rather than silently resolving it
-- The output is a clean action register that you can paste into your task system
-- The human step is confirming owners, dates, and whether "decision-ish" items were actually decided
+- AI extracts action items even from terrible notes and **flags ambiguity**
+- The output is a clean action register — you confirm owners, dates, and decisions
 
 ---
 
@@ -540,15 +518,14 @@ The messy exec meeting notes (Artifact 11) have deliberate problems:
 
 ### Instructions (15 minutes)
 
-Paste the **Messy Exec Meeting Notes** (Artifact 11), then add:
+Paste **Artifact 11** (Messy Exec Meeting Notes), then add:
 
 > *These meeting notes are messy and incomplete. Please:*
-> *1. Format as professional meeting minutes with clear headings*
-> *2. Extract all action items into a table: Action, Owner, DueDate, Status*
-> *3. Where the owner is unclear, write "OWNER TBC" and suggest who it might be*
-> *4. Where the date is vague, write "DATE TBC" and suggest a reasonable deadline*
-> *5. List any items that sound like decisions but are not clearly confirmed — mark these as "DECISION TBC"*
-> *6. Draft a 5-sentence email summary to send to attendees, asking them to confirm their action items*
+> *1. Format as professional minutes with clear headings*
+> *2. Extract action items into a table: Action, Owner, DueDate, Status*
+> *3. Where owner/date is unclear, write "TBC" and suggest a reasonable value*
+> *4. List items that sound like decisions but are not confirmed — mark "DECISION TBC"*
+> *5. Draft a 5-sentence email summary asking attendees to confirm their action items*
 
 ### What to look for
 
@@ -600,23 +577,17 @@ Paste the **Messy Exec Meeting Notes** (Artifact 11), then add:
 
 ### The AI Sandwich in practice
 
-Every task you do at work follows this pattern:
-
-**Raw input** (messy email, partial export, scribbled notes)
-   ↓
-**AI transforms** (structures, drafts, flags issues)
-   ↓
-**You verify** (check facts, check privacy, check promises)
-   ↓
-**Clean output** (system entry, sent email, filed record)
+**Raw input** → **AI transforms** → **You verify** → **Clean output**
 
 ### Your verification checklist
 
-- Are **facts** confirmed by 2+ sources?
-- Are **people** identified only by role or ID (not by name in general text)?
-- Are **promises** limited to what has been decided?
-- Are **evidence** claims backed by actual records?
-- Are **owners and dates** specific (not "someone" or "soon")?
+Before sending any AI output, check:
+
+- **Facts** confirmed by 2+ sources?
+- **People** identified by role or ID only (no names in general text)?
+- **Promises** limited to what has been formally decided?
+- **Evidence** claims backed by actual records?
+- **Owners and dates** specific (not "someone" or "soon")?
 
 ---
 

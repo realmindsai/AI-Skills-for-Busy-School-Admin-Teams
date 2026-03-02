@@ -826,6 +826,138 @@ Exercises 4 - 8 (11:30 - 1:00)
 
 ---
 
+<!-- _class: theory -->
+
+## AI as Error Detector
+
+### The theory: checking, not just creating
+
+- Most people think of AI as a **generator** — it writes, drafts, and creates
+- But AI is equally powerful as a **checker** — it spots errors humans miss
+- Watching AI find a date that falls on a Saturday or a clash with NAPLAN is genuinely surprising
+
+### What this exercise demonstrates
+
+- AI catches logical errors (wrong day-of-week, double-bookings, holiday clashes)
+- It brings **external knowledge** (public holidays, exam schedules) to verify your data
+- The meta-lesson: use AI for **verification**, not just creation
+
+---
+
+<!-- _class: exercise -->
+
+## Exercise 9: Spot the Error — Calendar Checker
+
+### Instructions (10 minutes)
+
+1. Open the **Draft Term 2 Calendar** from your handout (Artifact 08)
+2. Paste your context card, then the calendar, then add:
+
+> *Here is our draft Term 2 calendar for a Victorian secondary school. Check it for:*
+> *1. Any dates where the day-of-week does not match the actual calendar*
+> *2. Clashes with known Victorian public holidays*
+> *3. Events double-booked on the same day*
+> *4. NAPLAN scheduling issues*
+> *5. Any other errors or concerns you notice*
+
+3. Compare AI's findings to your own reading — did you spot the same errors?
+
+### What to check
+
+- Does AI catch the **NAPLAN day-of-week error** (Tue 13 May labelled Wednesday)?
+- Does it spot the **double-booked** Wed 7 May?
+- Does it flag the Queen's Birthday date issue?
+
+---
+
+<!-- _class: debrief -->
+
+## Exercise 9: What You Learned
+
+### Key takeaways
+
+- AI is an excellent **proofreader for structured data** — dates, schedules, timetables
+- It cross-references against external facts (public holidays, exam windows)
+- The exercise shifts your mental model: AI is a **checker** as much as a creator
+
+### The principle
+
+> AI catches errors in structured data that tired eyes miss. Use it to **verify** calendars, timetables, and event schedules before publishing.
+
+### Try this at work
+
+- Paste your term planner or event calendar into AI before it goes to print
+- Ask AI to check for weekend clashes, holiday conflicts, and double-bookings
+- This takes 30 seconds and can prevent embarrassing published errors
+
+---
+
+<!-- _class: theory -->
+
+## From Chaos to Structure
+
+### The theory: extracting structured data from messy text
+
+- Admin staff regularly receive information in **inconsistent formats** — different suppliers, different layouts, different terminology
+- Manually copying numbers from emails into spreadsheets is tedious and error-prone
+- AI excels at **parsing, normalising, and comparing** unstructured text
+
+### What this exercise demonstrates
+
+- AI extracts structured data from three different messy formats into one clean table
+- It normalises inconsistencies (different pack sizes, GST handling, missing items)
+- The comparison table becomes an **immediate decision tool**
+
+---
+
+<!-- _class: exercise -->
+
+## Exercise 10: Vendor Quote Comparison
+
+### Instructions (10 minutes)
+
+1. Open the **Three Vendor Quotes** from your handout (Artifact 09)
+2. Paste your context card, then all three quotes, then add:
+
+> *Here are quotes from three suppliers for office stationery. They arrived in different formats. Please:*
+> *1. Create a comparison table: Item, OfficePro price, SchoolSupply price, Aussie Ed price (all inc GST)*
+> *2. Normalise pack sizes — note where quantities differ*
+> *3. Highlight the cheapest option for each item*
+> *4. Flag any items missing from a supplier*
+> *5. Calculate the total cost from each supplier (including delivery)*
+
+3. Check the AI's arithmetic — are the GST calculations correct?
+
+### What to check
+
+- Does AI handle the **mixed GST formats** (ex-GST vs inc-GST)?
+- Does it flag the **different pack sizes** (8-pack vs 10-pack markers)?
+- Does it note the **missing glue sticks** from Aussie Ed?
+
+---
+
+<!-- _class: debrief -->
+
+## Exercise 10: What You Learned
+
+### Key takeaways
+
+- AI turns **messy, inconsistent supplier data** into a clean comparison in seconds
+- It flags differences in pack sizes and missing items that you might overlook
+- Always verify GST calculations — AI sometimes confuses ex-GST and inc-GST pricing
+
+### The principle
+
+> AI extracts structure from chaos. Three different formats become one clean table — but **you verify the numbers** before making a decision.
+
+### Try this at work
+
+- Use this pattern for any supplier comparison, quote evaluation, or price check
+- Works equally well for comparing insurance quotes, contractor proposals, or service agreements
+- Always double-check the arithmetic — paste the AI table into a spreadsheet for verification
+
+---
+
 <!-- _class: break-slide -->
 <!-- _paginate: false -->
 
