@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Skills for Busy School Admin Teams | Real Minds AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --purple: #A77ACD;
+      --purple-dark: #7B5BA0;
+      --orange: #F26541;
+      --black: #1A1B25;
+      --slate: #373841;
+      --offwhite: #FAF9F7;
+      --oat: #F1E8D7;
+      --blue: #5791C7;
+      --green: #349990;
+      --border: #E7E7EA;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Epilogue', 'Inter', 'SF Pro', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: var(--offwhite);
+      color: var(--black);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #A77ACD 0%, #7B5BA0 60%, #5D3F7E 100%);
+      padding: 48px 0 40px;
+      text-align: center;
+      color: white;
+    }
+
+    header img {
+      height: 60px;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 18px;
+      opacity: 0.9;
+      font-weight: 400;
+    }
+
+    /* Workshop info card */
+    .workshop-info {
+      background: white;
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--orange);
+      border-radius: 8px;
+      padding: 28px 32px;
+      margin: -24px auto 32px;
+      position: relative;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .workshop-info h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 24px;
+    }
+
+    .info-item {
+      font-size: 15px;
+    }
+
+    .info-item strong {
+      color: var(--slate);
+      font-weight: 600;
+    }
+
+    /* Section headings */
+    .section-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--purple);
+      margin: 40px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 3px solid var(--purple);
+    }
+
+    .section-subtitle {
+      font-size: 15px;
+      color: var(--slate);
+      margin-bottom: 20px;
+    }
+
+    /* Material cards */
+    .material-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+      transition: box-shadow 0.2s;
+    }
+
+    .material-card:hover {
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    .material-card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+
+    .material-card p {
+      font-size: 14px;
+      color: var(--slate);
+      margin-bottom: 12px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .links a {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .link-primary {
+      background: var(--purple);
+      color: white;
+    }
+
+    .link-primary:hover {
+      background: var(--purple-dark);
+    }
+
+    .link-secondary {
+      background: var(--oat);
+      color: var(--slate);
+    }
+
+    .link-secondary:hover {
+      background: #E8CCAE;
+      color: var(--black);
+    }
+
+    .link-outline {
+      border: 1px solid var(--border);
+      color: var(--slate);
+      background: white;
+    }
+
+    .link-outline:hover {
+      border-color: var(--purple);
+      color: var(--purple);
+    }
+
+    /* Track badges */
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 3px 10px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+
+    .badge-intro {
+      background: #EDE4F3;
+      color: var(--purple);
+    }
+
+    .badge-advanced {
+      background: #FFF3E0;
+      color: var(--orange);
+    }
+
+    /* Getting started */
+    .getting-started {
+      background: var(--oat);
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin-bottom: 32px;
+    }
+
+    .getting-started h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+
+    .getting-started ol {
+      padding-left: 20px;
+    }
+
+    .getting-started li {
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 0 48px;
+      margin-top: 48px;
+      border-top: 1px solid var(--border);
+      color: var(--slate);
+      font-size: 14px;
+    }
+
+    footer img {
+      height: 36px;
+      margin-bottom: 8px;
+    }
+
+    footer .tagline {
+      font-style: italic;
+      color: var(--purple);
+      margin: 4px 0 8px;
+    }
+
+    footer a {
+      color: var(--purple);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 { font-size: 24px; }
+      header { padding: 32px 0 28px; }
+      .info-grid { grid-template-columns: 1fr; }
+      .workshop-info { padding: 20px 20px; margin: -16px 16px 24px; }
+      .material-card { padding: 20px 20px; }
+      .links { flex-direction: column; }
+      .links a { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <img src="assets/rmai_logo.png" alt="Real Minds AI">
+      <h1>AI Skills for Busy School Admin Teams</h1>
+      <p>Workshop Materials</p>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <div class="workshop-info">
+      <h2>Workshop Details</h2>
+      <div class="info-grid">
+        <div class="info-item"><strong>Date:</strong> Wednesday 5 March 2026</div>
+        <div class="info-item"><strong>Time:</strong> 9:30 am &ndash; 3:00 pm</div>
+        <div class="info-item"><strong>Delivery:</strong> Online via Zoom</div>
+        <div class="info-item"><strong>Presented by:</strong> Real Minds AI</div>
+        <div class="info-item"><strong>Presenters:</strong> Tracy Anthony &amp; Dr Dennis Wollersheim</div>
+        <div class="info-item"><strong>For:</strong> Critical Agendas</div>
+      </div>
+    </div>
+
+    <div class="getting-started">
+      <h2>Getting Started</h2>
+      <ol>
+        <li>Open <strong>ChatGPT</strong>, <strong>Copilot</strong>, <strong>Gemini</strong>, or <strong>Claude</strong> in a browser tab</li>
+        <li>Download or bookmark the <strong>Prompt Pack</strong> below &mdash; you will copy prompts from it during exercises</li>
+        <li>Keep the <strong>Data Pack</strong> open &mdash; it contains the fictional data you will paste into AI tools</li>
+        <li>Your first exercise will be building a <strong>Context Card</strong> &mdash; a reusable intro that helps AI understand your role</li>
+      </ol>
+    </div>
+
+    <!-- Introductory Materials -->
+    <h2 class="section-title">Introductory Materials</h2>
+    <p class="section-subtitle">Morning and early afternoon sessions &mdash; Exercises 1 to 8</p>
+
+    <div class="material-card">
+      <span class="badge badge-intro">Slides</span>
+      <h3>Workshop Slide Deck</h3>
+      <p>AI concepts, exercise introductions, theory, and debrief slides for all 8 introductory exercises.</p>
+      <div class="links">
+        <a href="introductory/workshop-slides.html" class="link-primary">View in Browser</a>
+        <a href="introductory/workshop-slides.pdf" class="link-secondary">Download PDF</a>
+        <a href="introductory/workshop-slides.pptx" class="link-secondary">Download PPTX</a>
+        <a href="introductory/workshop-slides.md" class="link-outline">View Source</a>
+      </div>
+    </div>
+
+    <div class="material-card">
+      <span class="badge badge-intro">Handout</span>
+      <h3>Prompt Pack</h3>
+      <p>Copy-and-paste prompts for every exercise. Start here during the workshop.</p>
+      <div class="links">
+        <a href="introductory/participant-prompt-pack.md" class="link-primary">Open Prompt Pack</a>
+      </div>
+    </div>
+
+    <div class="material-card">
+      <span class="badge badge-intro">Handout</span>
+      <h3>Data Pack &mdash; Marraburra Secondary College</h3>
+      <p>Fictional school data: attendance records, complaint emails, budget snapshots, policies, and meeting notes. Paste these into your AI tool alongside the prompts.</p>
+      <div class="links">
+        <a href="introductory/participant-data-pack.md" class="link-primary">Open Data Pack</a>
+      </div>
+    </div>
+
+    <!-- Advanced Materials -->
+    <h2 class="section-title">Advanced Materials</h2>
+    <p class="section-subtitle">Afternoon session &mdash; Exercises A1 to A5: verification, governance, and messy data</p>
+
+    <div class="material-card">
+      <span class="badge badge-advanced">Slides</span>
+      <h3>Advanced Slide Deck</h3>
+      <p>The AI Sandwich, verification frameworks, and debrief slides for all 5 advanced exercises.</p>
+      <div class="links">
+        <a href="advanced/advanced-slides.html" class="link-primary">View in Browser</a>
+        <a href="advanced/advanced-slides.pdf" class="link-secondary">Download PDF</a>
+        <a href="advanced/advanced-slides.pptx" class="link-secondary">Download PPTX</a>
+        <a href="advanced/advanced-slides.md" class="link-outline">View Source</a>
+      </div>
+    </div>
+
+    <div class="material-card">
+      <span class="badge badge-advanced">Handout</span>
+      <h3>Advanced Prompt Pack</h3>
+      <p>Prompts for verification exercises, including reconciliation, governance auditing, and policy alignment.</p>
+      <div class="links">
+        <a href="advanced/advanced-prompt-pack.md" class="link-primary">Open Advanced Prompts</a>
+      </div>
+    </div>
+
+    <div class="material-card">
+      <span class="badge badge-advanced">Handout</span>
+      <h3>Messy Mini-Pack</h3>
+      <p>Intentionally broken data: duplicates, contradictions, missing fields, privacy traps, and ambiguous wording. Use with the advanced exercises to practice verification skills.</p>
+      <div class="links">
+        <a href="advanced/messy-mini-pack.md" class="link-primary">Open Messy Mini-Pack</a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <img src="assets/rmai_logo.png" alt="Real Minds AI">
+      <div class="tagline">wisdom, amplified</div>
+      <div><a href="https://realmindsai.com.au">realmindsai.com.au</a> &nbsp;|&nbsp; <a href="mailto:hello@realmindsai.com.au">hello@realmindsai.com.au</a></div>
+      <div style="margin-top: 12px; font-size: 12px; color: #8D8D92;">&copy; 2026 Real Minds Artificial Intelligence. All data in workshop materials is entirely fictional.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
