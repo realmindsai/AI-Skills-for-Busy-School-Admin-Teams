@@ -184,11 +184,75 @@
     footer a { color: var(--purple); text-decoration: none; }
     footer a:hover { text-decoration: underline; }
 
+    /* Slide gallery */
+    .slide-gallery {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+    }
+    .slide-gallery h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--purple);
+      margin: 0 0 6px;
+      padding: 0;
+      border: none;
+    }
+    .slide-gallery .gallery-subtitle {
+      font-size: 14px;
+      color: var(--slate);
+      margin-bottom: 16px;
+    }
+    .slide-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .slide-grid img {
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .slide-grid img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+    .slide-caption {
+      font-size: 12px;
+      color: var(--slate);
+      text-align: center;
+      margin-top: 4px;
+    }
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 8px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+
     @media (max-width: 600px) {
       header h1 { font-size: 20px; }
       header { padding: 24px 0 20px; }
       .copy-block pre { padding-right: 20px; padding-top: 44px; }
       .copy-btn { top: 6px; right: 6px; }
+      .slide-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -204,6 +268,42 @@
   </header>
 
   <div class="container content">
+
+<div class="slide-gallery">
+  <h2>Understanding AI — Key Concepts</h2>
+  <p class="gallery-subtitle">Reference slides from the workshop. Click any image to enlarge.</p>
+  <div class="slide-grid">
+    <div>
+      <img src="../assets/slides/ltu_slide3.png" alt="Technology adoption curves over 100 years" onclick="openLightbox(this.src)">
+      <div class="slide-caption">Technology adoption curves</div>
+    </div>
+    <div>
+      <img src="../assets/slides/radius_slide4.png" alt="GenAI Technical — how LLMs work: training and inference" onclick="openLightbox(this.src)">
+      <div class="slide-caption">How GenAI works — training and inference</div>
+    </div>
+    <div>
+      <img src="../assets/slides/ltu_slide6.png" alt="GenAI is a calculator for text, for knowledge" onclick="openLightbox(this.src)">
+      <div class="slide-caption">GenAI — a calculator for text</div>
+    </div>
+    <div>
+      <img src="../assets/slides/radius_slide5.png" alt="GenAI — meet your new friend, an e-bike for the mind" onclick="openLightbox(this.src)">
+      <div class="slide-caption">Meet your new friend — an e-bike for the mind</div>
+    </div>
+    <div>
+      <img src="../assets/slides/radius_slide6.png" alt="GenAI functional limits — context, knowledge, understanding, blameless" onclick="openLightbox(this.src)">
+      <div class="slide-caption">Functional limits of GenAI</div>
+    </div>
+    <div>
+      <img src="../assets/slides/ltu_slide7.png" alt="Math teachers protest against calculator use — historical newspaper clipping" onclick="openLightbox(this.src)">
+      <div class="slide-caption">We have been here before</div>
+    </div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="Enlarged slide">
+</div>
+
 <p><strong>Workshop:</strong> 5 March 2026 | <strong>Real Minds AI</strong></p>
 <p>Copy and paste these prompts into ChatGPT, Copilot, Gemini, or Claude. Start every session by pasting your <strong>Context Card</strong> first.</p>
 <hr>
@@ -472,6 +572,16 @@ on warmth (1-5), professionalism (1-5), and clarity (1-5).</pre>
           }, 2000);
         });
       });
+    });
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
     });
   </script>
 
