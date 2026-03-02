@@ -11,13 +11,17 @@ footer: 'Real Minds AI  |  wisdom, amplified'
 
 :root {
   --rmai-purple: #A77ACD;
+  --rmai-purple-dark: #6B4D8A;
   --rmai-orange: #F26541;
+  --rmai-orange-dark: #C04E2D;
   --rmai-black: #1A1B25;
   --rmai-slate: #373841;
   --rmai-offwhite: #FAF9F7;
   --rmai-oat: #F1E8D7;
   --rmai-blue: #5791C7;
+  --rmai-blue-dark: #2D6A9F;
   --rmai-green: #349990;
+  --rmai-green-dark: #1E6B64;
   --rmai-border: #E7E7EA;
   --rmai-red: #C62828;
 }
@@ -34,13 +38,13 @@ section {
 }
 
 h1, h2, h3 { font-weight: 700; margin: 0; padding: 0; }
-h1 { font-size: 48px; color: var(--rmai-purple); line-height: 1.2; }
-h2 { font-size: 36px; color: var(--rmai-purple); margin-bottom: 24px; border-bottom: 3px solid var(--rmai-purple); padding-bottom: 12px; }
+h1 { font-size: 48px; color: var(--rmai-purple-dark); line-height: 1.2; }
+h2 { font-size: 36px; color: var(--rmai-purple-dark); margin-bottom: 24px; border-bottom: 3px solid var(--rmai-purple); padding-bottom: 12px; }
 h3 { font-size: 26px; color: var(--rmai-slate); font-weight: 600; margin-top: 16px; }
 
 ul, ol { padding-left: 28px; }
 li { margin-bottom: 8px; }
-strong { color: var(--rmai-purple); }
+strong { color: var(--rmai-black); font-weight: 700; }
 em { color: var(--rmai-slate); }
 
 table { border-collapse: collapse; width: 100%; font-size: 18px; margin: 12px 0; }
@@ -67,19 +71,19 @@ section.theory {
   background: var(--rmai-oat);
   border-top: 6px solid var(--rmai-orange);
 }
-section.theory h2 { color: var(--rmai-orange); border-bottom-color: var(--rmai-orange); }
+section.theory h2 { color: var(--rmai-orange-dark); border-bottom-color: var(--rmai-orange); }
 
 section.exercise {
   background: white;
   border-top: 6px solid var(--rmai-blue);
 }
-section.exercise h2 { color: var(--rmai-blue); border-bottom-color: var(--rmai-blue); }
+section.exercise h2 { color: var(--rmai-blue-dark); border-bottom-color: var(--rmai-blue); }
 
 section.debrief {
   background: linear-gradient(180deg, var(--rmai-offwhite) 0%, #EDE4F3 100%);
   border-top: 6px solid var(--rmai-green);
 }
-section.debrief h2 { color: var(--rmai-green); border-bottom-color: var(--rmai-green); }
+section.debrief h2 { color: var(--rmai-green-dark); border-bottom-color: var(--rmai-green); }
 
 section.warning {
   background: #FFF3E0;
